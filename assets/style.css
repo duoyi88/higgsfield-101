@@ -12,8 +12,8 @@
   --cheap: #1F6B3A;
   --mid: #8A5A00;
   --spend: #8B1E1E;
-  --font-display: "Outfit", "IBM Plex Sans", system-ui, sans-serif;
-  --font-body: "IBM Plex Sans", system-ui, sans-serif;
+  --font-display: "Outfit", "Noto Sans TC", "IBM Plex Sans", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", "Noto Sans TC", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
   --max: 1120px;
   --sec-y: clamp(48px, 7vw, 88px);
@@ -95,6 +95,47 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   font-size: 13px;
   font-weight: 600;
 }
+body[data-lang="zh-TW"] {
+  --font-display: "Noto Sans TC", "Outfit", system-ui, sans-serif;
+  --font-body: "Noto Sans TC", "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 16.5px;
+  letter-spacing: 0.01em;
+}
+body[data-lang="zh-TW"] .hero h1,
+body[data-lang="zh-TW"] .ch-head h2 {
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.lang-switch {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  margin-left: 4px;
+}
+.lang-btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 7px 10px;
+  cursor: pointer;
+  line-height: 1;
+}
+.lang-btn + .lang-btn {
+  border-left: 1px solid var(--line);
+}
+.lang-btn:hover {
+  color: var(--ink);
+  background: var(--surface);
+}
+.lang-btn.is-active {
+  background: var(--ink);
+  color: #fff;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -900,6 +941,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .mini-grid { grid-template-columns: 1fr; }
   .nav-links a:not(.nav-cta) { display: none; }
   .photo-block img { max-height: 360px; }
+  .lang-switch { margin-left: 0; }
 }
 
 @media (max-width: 560px) {
