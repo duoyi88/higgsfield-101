@@ -33,15 +33,21 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-body::after {
+/* Grain behind content only — never above controls.
+   Edge/Chromium can block clicks when a full-screen blend layer sits on top.
+   Do NOT use mix-blend-mode on full-viewport overlays (breaks hit-testing on Edge). */
+body::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: 90;
-  pointer-events: none;
+  z-index: 0;
+  pointer-events: none !important;
   opacity: .03;
-  mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+main, .foot {
+  position: relative;
+  z-index: 1;
 }
 
 .skip {
@@ -65,14 +71,13 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .nav {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 200;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
   padding: 14px clamp(16px, 4vw, 40px);
-  background: color-mix(in srgb, var(--bg) 92%, transparent);
-  backdrop-filter: blur(10px);
+  background: #FAFAF8;
   border-bottom: 1px solid var(--line);
 }
 .brand {
@@ -109,32 +114,72 @@ body[data-lang="zh-TW"] .ch-head h2 {
 
 .lang-switch {
   display: inline-flex;
-  border: 1px solid var(--line);
-  margin-left: 4px;
+  border: 2px solid var(--ink);
+  margin-left: 6px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 210;
+  background: #fff;
 }
 .lang-btn {
   appearance: none;
+  -webkit-appearance: none;
   border: 0;
-  background: transparent;
-  color: var(--muted);
+  background: #fff;
+  color: var(--ink);
   font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 600;
-  padding: 7px 10px;
+  font-size: 13px;
+  font-weight: 700;
+  min-width: 52px;
+  min-height: 44px;
+  padding: 0 14px;
   cursor: pointer;
   line-height: 1;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 211;
 }
 .lang-btn + .lang-btn {
-  border-left: 1px solid var(--line);
+  border-left: 2px solid var(--ink);
 }
 .lang-btn:hover {
-  color: var(--ink);
   background: var(--surface);
 }
+.lang-btn:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  z-index: 212;
+}
 .lang-btn.is-active {
-  background: var(--ink);
+  background: var(--accent);
   color: #fff;
 }
+/* Fixed fallback control — always on top for Edge/Windows */
+.lang-switch-fixed {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 9999;
+  display: none;
+  border: 2px solid var(--ink);
+  background: #fff;
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--ink) 18%, transparent);
+}
+.lang-switch-fixed .lang-btn {
+  min-width: 56px;
+  min-height: 44px;
+}
+/* Show fixed switcher if nav one is hard to hit, always available on small screens */
+@media (max-width: 900px) {
+  .lang-switch-fixed { display: inline-flex; }
+  .nav .lang-switch { display: none; }
+}
+/* Windows / Edge: always use fixed top-right control */
+html.force-fixed-lang .lang-switch-fixed { display: inline-flex; }
+html.force-fixed-lang .nav .lang-switch { display: none; }
 
 .nav-links {
   display: flex;
@@ -917,7 +962,7 @@ body[data-lang="zh-TW"] .ch-head h2 {
   color: var(--ink);
   font-size: 16px;
   cursor: pointer;
-  z-index: 40;
+  z-index: 9998;
   opacity: 0;
   pointer-events: none;
   transition: opacity .2s ease;

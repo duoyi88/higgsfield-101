@@ -15,6 +15,7 @@
   let current = detectLang();
 
   const apply = (lang) => {
+    if (lang !== "en" && lang !== "zh-TW") return;
     current = lang;
     const dict = I18N[lang] || I18N.en;
     document.documentElement.lang = lang === "zh-TW" ? "zh-Hant-TW" : "en";
@@ -48,7 +49,6 @@
       el.setAttribute("alt", val);
     });
 
-    // document title + meta description
     if (dict["meta.title"]) document.title = dict["meta.title"];
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc && dict["meta.desc"]) metaDesc.setAttribute("content", dict["meta.desc"]);
@@ -57,7 +57,6 @@
     const ogDesc = document.querySelector('meta[property="og:description"]');
     if (ogDesc && dict["meta.desc"]) ogDesc.setAttribute("content", dict["meta.desc"]);
 
-    // toggle buttons
     document.querySelectorAll("[data-lang-set]").forEach((btn) => {
       const active = btn.getAttribute("data-lang-set") === lang;
       btn.classList.toggle("is-active", active);
@@ -69,17 +68,61 @@
     } catch (_) {}
   };
 
-  // Language switcher
-  document.querySelectorAll("[data-lang-set]").forEach((btn) => {
-    btn.addEventListener("click", () => {
+  const setLangFromEvent = (e) => {
+    const t = e.target;
+    if (!t || !t.closest) return;
+    const btn = t.closest("[data-lang-set]");
+    if (!btn || !document.contains(btn)) return;
+    // Stop only after we own the click — avoids Edge quirks with capture+preventDefault
+    e.preventDefault();
+    const lang = btn.getAttribute("data-lang-set");
+    if (lang) apply(lang);
+  };
+
+  // pointerup works more reliably than click on some Edge/Windows setups
+  document.addEventListener("pointerup", setLangFromEvent, false);
+  document.addEventListener("click", setLangFromEvent, false);
+
+  document.addEventListener("keydown", (e) => {
+    const t = e.target;
+    if (!t || !t.closest) return;
+    const btn = t.closest("[data-lang-set]");
+    if (!btn) return;
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
       const lang = btn.getAttribute("data-lang-set");
       if (lang) apply(lang);
-    });
+    }
   });
 
-  apply(current);
+  // Direct bind as well (Edge sometimes drops delegated events on sticky/fixed layers)
+  const bindDirect = () => {
+    document.querySelectorAll("[data-lang-set]").forEach((btn) => {
+      if (btn.dataset.bound === "1") return;
+      btn.dataset.bound = "1";
+      const handler = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const lang = btn.getAttribute("data-lang-set");
+        if (lang) apply(lang);
+      };
+      btn.addEventListener("click", handler, false);
+      btn.addEventListener("pointerup", handler, false);
+    });
+  };
 
-  // Back to top
+  apply(current);
+  bindDirect();
+
+  // Always show fixed switcher on desktop too if user agent is Edge (Windows)
+  try {
+    const isEdge = /Edg\//.test(navigator.userAgent);
+    const isWin = /Windows/i.test(navigator.userAgent);
+    if (isEdge || isWin) {
+      document.documentElement.classList.add("force-fixed-lang");
+    }
+  } catch (_) {}
+
   const topBtn = document.getElementById("toTop");
   if (topBtn) {
     const onScroll = () => {
@@ -92,7 +135,6 @@
     });
   }
 
-  // Remember open deep-dives in session
   document.querySelectorAll("details.deep").forEach((el, i) => {
     const key = `hf101-deep-${i}`;
     try {
