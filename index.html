@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Higgsfield 101 — AI Video for Absolute Beginners | Ron</title>
+<meta name="description" content="A dumb-simple, step-by-step guide to Higgsfield AI video: models, Cinema Studio, Soul ID, MCP/Skills, and how to ship a Taiwan beauty vlog intro.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Higgsfield 101 — AI Video for Absolute Beginners">
+<meta property="og:description" content="No jargon first. Expand when you need depth. Models, MCP, Skills, and a full vlog prep checklist.">
+<meta property="og:url" content="https://higgsfield.ron.best/">
+<meta property="og:locale" content="en_US">
+<meta name="theme-color" content="#FAFAF8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23111110'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='14' font-family='monospace' fill='%23FF4D00'%3EHF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <a class="brand" href="https://ron.best/" target="_blank" rel="noopener">
+    <span class="brand-mark">R</span>
+    <span class="brand-text">Ron · Higgsfield 101</span>
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="#toc">Contents</a>
+    <a href="#ch5">MCP</a>
+    <a href="#ch7">Vlog Prep</a>
+    <a class="nav-cta" href="#ch8">Start MVP</a>
+  </nav>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="kicker">Dumb tutorial · expandable depth</p>
+      <h1>Higgsfield 101:<br>AI video without the panic.</h1>
+      <p class="lead">You do not need a film degree. You need short clips, a clear shot list, and the right model for each job. This page starts simple. Open any section when you want the full step-by-step.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#ch1">Start from zero</a>
+        <a class="btn-ghost" href="#ch7">Jump to vlog prep</a>
+      </div>
+      <ul class="hero-meta">
+        <li><strong>Read time</strong> 12–20 min</li>
+        <li><strong>Level</strong> Absolute beginner → practical</li>
+        <li><strong>Output</strong> 15–30s vlog intro path</li>
+      </ul>
+    </div>
+    <aside class="hero-board" aria-label="What you will learn">
+      <div class="board-head">
+        <span class="board-label">You will leave knowing</span>
+        <span class="board-chip">8 chapters</span>
+      </div>
+      <ol class="board-list">
+        <li><span>01</span> What Higgsfield actually is</li>
+        <li><span>02</span> How video generation works</li>
+        <li><span>03</span> Which model to pick</li>
+        <li><span>04</span> Strengths &amp; honest limits</li>
+        <li><span>05</span> MCP + Skills setup</li>
+        <li><span>06</span> Recipe for good assets</li>
+        <li><span>07</span> Taiwan beauty vlog prep</li>
+        <li><span>08</span> MVP workflow you can run today</li>
+      </ol>
+    </aside>
+  </section>
+
+  <!-- TOC -->
+  <nav class="toc" id="toc" aria-label="Table of contents">
+    <h2>Table of contents</h2>
+    <div class="toc-grid">
+      <a href="#ch1"><em>01</em> What is it?</a>
+      <a href="#ch2"><em>02</em> Capabilities</a>
+      <a href="#ch3"><em>03</em> Model cheat sheet</a>
+      <a href="#ch4"><em>04</em> Strengths &amp; limits</a>
+      <a href="#ch5"><em>05</em> MCP &amp; Skills</a>
+      <a href="#ch6"><em>06</em> Good assets recipe</a>
+      <a href="#ch7"><em>07</em> Vlog prep checklist</a>
+      <a href="#ch8"><em>08</em> MVP workflow</a>
+    </div>
+  </nav>
+
+  <!-- CH1 -->
+  <section class="chapter" id="ch1">
+    <header class="ch-head">
+      <span class="ch-num">01</span>
+      <div>
+        <h2>What is Higgsfield? (dumb version)</h2>
+        <p class="ch-blurb">One workspace. Many AI video models. Extra director tools on top.</p>
+      </div>
+    </header>
+
+    <div class="simple-box">
+      <p class="simple-label">Explain like I am five</p>
+      <p>Higgsfield is <strong>not one magic model</strong>. It is a <strong>video mall</strong>: Kling, Seedance, Veo, Wan, MiniMax, and more live under one login. You pick the tool for the shot. Then you stack Higgsfield’s own director toys: camera control, character lock, lip-sync, motion copy.</p>
+    </div>
+
+    <div class="diagram" aria-hidden="true">
+      <div class="diagram-title">Mental model</div>
+      <div class="flow">
+        <div class="flow-node">Your idea</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">Prompt + image</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node accent">Pick a model</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">5–15s clip</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">Edit / stitch</div>
+      </div>
+      <p class="diagram-note">Long videos = many short clips + a real editor. Not one giant generate button.</p>
+    </div>
+
+    <details class="deep">
+      <summary>Deep dive: platform map</summary>
+      <div class="deep-body">
+        <div class="two-col">
+          <div>
+            <h3>What you get in one place</h3>
+            <ul class="check">
+              <li>Text-to-video and image-to-video</li>
+              <li>Video restyle / reshoot from a reference clip</li>
+              <li>Cinema Studio (virtual cameras &amp; lenses)</li>
+              <li>Soul ID (same face across shots)</li>
+              <li>LipSync, motion control, first/last frame lock</li>
+              <li>MCP / CLI / Skills so agents can generate for you</li>
+            </ul>
+          </div>
+          <div class="card-muted">
+            <h3>What it is not</h3>
+            <ul class="xlist">
+              <li>Not a full NLE like Premiere</li>
+              <li>Not a free unlimited render farm</li>
+              <li>Not perfect long-form identity lock without prep</li>
+              <li>Not “type one sentence, get a 5-minute film”</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- CH2 -->
+  <section class="chapter" id="ch2">
+    <header class="ch-head">
+      <span class="ch-num">02</span>
+      <div>
+        <h2>Capabilities: the buttons that matter</h2>
+        <p class="ch-blurb">Six paths. Learn these and you can ignore half the UI.</p>
+      </div>
+    </header>
+
+    <div class="card-grid path-grid">
+      <article class="path-card">
+        <div class="path-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="10" width="36" height="28" stroke="currentColor" stroke-width="2"/><path d="M12 18h16M12 24h24M12 30h12" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <h3>Text → Video</h3>
+        <p>Describe a shot. Get a short clip. Best for mood, B-roll, concepts.</p>
+        <p class="tag">Fast concepts</p>
+      </article>
+      <article class="path-card featured">
+        <div class="path-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="24" stroke="currentColor" stroke-width="2"/><path d="M18 40h12M24 32v8" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="20" r="4" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <h3>Image → Video</h3>
+        <p>Lock the face and frame first, then animate. <strong>Your default for people.</strong></p>
+        <p class="tag">Vlog default</p>
+      </article>
+      <article class="path-card">
+        <div class="path-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none"><path d="M8 30c8-12 12-4 16-12s8 0 16 12" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="32" r="3" stroke="currentColor" stroke-width="2"/><circle cx="36" cy="32" r="3" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <h3>Motion control</h3>
+        <p>Upload a reference performance. Copy pace, gesture, body language.</p>
+        <p class="tag">Action lock</p>
+      </article>
+      <article class="path-card">
+        <div class="path-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="12" width="14" height="20" stroke="currentColor" stroke-width="2"/><rect x="28" y="12" width="14" height="20" stroke="currentColor" stroke-width="2"/><path d="M20 22h8" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <h3>First / last frame</h3>
+        <p>Pin start and end stills so multi-shot stitching stays coherent.</p>
+        <p class="tag">Continuity</p>
+      </article>
+      <article class="path-card">
+        <div class="path-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="10" stroke="currentColor" stroke-width="2"/><path d="M24 8v4M24 36v4M8 24h4M36 24h4" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <h3>Cinema Studio</h3>
+        <p>Pick camera body, lens, focal length, multi-axis moves. Film language, not luck.</p>
+        <p class="tag">Director mode</p>
+      </article>
+      <article class="path-card">
+        <div class="path-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="18" r="8" stroke="currentColor" stroke-width="2"/><path d="M10 40c2-8 8-12 14-12s12 4 14 12" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <h3>Soul ID + LipSync</h3>
+        <p>Train a reusable character. Keep the face stable. Sync talking heads.</p>
+        <p class="tag">Series host</p>
+      </article>
+    </div>
+
+    <figure class="visual-panel">
+      <div class="visual-mock" aria-hidden="true">
+        <div class="mock-bar"><span></span><span></span><span></span><em>Image → Video workspace</em></div>
+        <div class="mock-body">
+          <div class="mock-still">
+            <div class="still-face"></div>
+            <div class="still-label">Key still</div>
+          </div>
+          <div class="mock-mid">
+            <div class="mock-prompt">“Handheld vlog, soft smile, slow push-in, golden hour Taipei street”</div>
+            <div class="mock-meta">Model: Kling 3.0 · 6s · 9:16</div>
+          </div>
+          <div class="mock-out">
+            <div class="play-ring">▶</div>
+            <div class="still-label">Clip out</div>
+          </div>
+        </div>
+      </div>
+      <figcaption>
+        <strong>Best beginner habit:</strong> generate a strong still first, then animate one clear action. Do not ask the model to invent face + outfit + camera + dialogue in one go.
+      </figcaption>
+    </figure>
+
+    <details class="deep">
+      <summary>Deep dive: step-by-step image-to-video</summary>
+      <div class="deep-body">
+        <ol class="steps">
+          <li>
+            <strong>Write one shot only</strong>
+            <p>Subject + action + camera + light. Example: “Medium close-up, young Taiwanese woman waves at camera, handheld iPhone feel, soft daylight.”</p>
+          </li>
+          <li>
+            <strong>Generate or upload a key still</strong>
+            <p>Face sharp, outfit fixed, background readable. Reject plastic skin and weird hands before you animate.</p>
+          </li>
+          <li>
+            <strong>Animate with a short duration</strong>
+            <p>Start at 5–8 seconds. One gesture. No multitasking.</p>
+          </li>
+          <li>
+            <strong>Pick the model for the job</strong>
+            <p>People talking / walking → Kling. Wide outdoor mood → Veo. Multi-shot + audio → Seedance. Drafts → MiniMax.</p>
+          </li>
+          <li>
+            <strong>Export and stitch outside</strong>
+            <p>CapCut, Premiere, DaVinci. Add captions, BGM, logo sting.</p>
+          </li>
+        </ol>
+      </div>
+    </details>
+  </section>
+
+  <!-- CH3 -->
+  <section class="chapter" id="ch3">
+    <header class="ch-head">
+      <span class="ch-num">03</span>
+      <div>
+        <h2>Model cheat sheet</h2>
+        <p class="ch-blurb">Do not use the expensive model for everything. Match the job.</p>
+      </div>
+    </header>
+
+    <div class="table-wrap">
+      <table class="model-table">
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Best for</th>
+            <th>Skip when…</th>
+            <th>Cost vibe</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Kling 3.0</strong></td>
+            <td>People, multi-shot story, voice binding, character work</td>
+            <td>You only need a quick abstract draft</td>
+            <td class="cheap">Cheap daily driver</td>
+          </tr>
+          <tr>
+            <td><strong>Seedance 2.0</strong></td>
+            <td>Finished multi-shot sequences with native audio</td>
+            <td>You are still exploring concepts</td>
+            <td class="spend">Spend on finals</td>
+          </tr>
+          <tr>
+            <td><strong>Veo 3.1</strong></td>
+            <td>Outdoor scale, weather, atmosphere, wide plates</td>
+            <td>Tight talking-head close-ups</td>
+            <td class="spend">Premium plate</td>
+          </tr>
+          <tr>
+            <td><strong>Wan 2.7</strong></td>
+            <td>Restyle / “reshoot” from a reference clip, product physics</td>
+            <td>Pure text-only generation with no reference</td>
+            <td class="mid">Mid, reference-heavy</td>
+          </tr>
+          <tr>
+            <td><strong>MiniMax Hailuo</strong></td>
+            <td>Fast short-form drafts, style tests, daily volume</td>
+            <td>You need directed multi-shot cinema</td>
+            <td class="cheap">Draft machine</td>
+          </tr>
+          <tr>
+            <td><strong>Cinema Studio</strong></td>
+            <td>Lens language, multi-axis moves, film look control</td>
+            <td>You just need a raw idea dump</td>
+            <td class="mid">Craft layer</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <strong>Money rule:</strong> draft cheap (MiniMax / Kling) → finish expensive (Seedance / Veo). One bad habit burns a month of credits.
+    </div>
+
+    <details class="deep">
+      <summary>Deep dive: example model routing for one 30s intro</summary>
+      <div class="deep-body">
+        <div class="route">
+          <div class="route-row"><span class="t">0–3s</span><span class="w">Taipei skyline establish</span><span class="m">Veo or MiniMax</span></div>
+          <div class="route-row"><span class="t">3–8s</span><span class="w">Host walks into frame, waves</span><span class="m">Kling I2V</span></div>
+          <div class="route-row"><span class="t">8–15s</span><span class="w">Talking head intro line</span><span class="m">Kling + LipSync</span></div>
+          <div class="route-row"><span class="t">15–22s</span><span class="w">Night market B-roll walk</span><span class="m">Seedance or Kling</span></div>
+          <div class="route-row"><span class="t">22–30s</span><span class="w">CTA + end card</span><span class="m">Still + editor</span></div>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- CH4 -->
+  <section class="chapter" id="ch4">
+    <header class="ch-head">
+      <span class="ch-num">04</span>
+      <div>
+        <h2>Strengths &amp; honest limits</h2>
+        <p class="ch-blurb">Use the strengths. Design around the limits. No fantasy.</p>
+      </div>
+    </header>
+
+    <div class="split-good-bad">
+      <div class="good">
+        <h3>Strengths</h3>
+        <ul>
+          <li>Many top models under one plan</li>
+          <li>Real camera / lens control (Cinema Studio)</li>
+          <li>Character consistency via Soul ID</li>
+          <li>Mature image-to-video workflow</li>
+          <li>Agent-ready MCP / Skills / CLI</li>
+          <li>Social-first formats (9:16, short ads, UGC)</li>
+        </ul>
+      </div>
+      <div class="bad">
+        <h3>Limits</h3>
+        <ul>
+          <li>Clips are short (often 5–15s)</li>
+          <li>Long motion drifts: faces, hands, continuity</li>
+          <li>Human close-ups need more control than landscapes</li>
+          <li>Credits vary wildly by model</li>
+          <li>Strict moderation on some models</li>
+          <li>Option overload burns money if you have no plan</li>
+        </ul>
+      </div>
+    </div>
+
+    <figure class="compare-visual" aria-label="Control ladder">
+      <div class="ladder">
+        <div class="rung low"><span>Low control</span><strong>Text-only one-shot</strong></div>
+        <div class="rung mid"><span>Medium</span><strong>Image → video, one action</strong></div>
+        <div class="rung high"><span>High control</span><strong>Soul ID + shot list + I2V + LipSync</strong></div>
+      </div>
+      <figcaption>If quality matters, climb the ladder. Beginners almost always under-control the face and over-control the fancy effects.</figcaption>
+    </figure>
+  </section>
+
+  <!-- CH5 -->
+  <section class="chapter" id="ch5">
+    <header class="ch-head">
+      <span class="ch-num">05</span>
+      <div>
+        <h2>MCP &amp; Skills: generate from your agent</h2>
+        <p class="ch-blurb">Stay in chat. Let the agent pick models, poll jobs, and return URLs.</p>
+      </div>
+    </header>
+
+    <div class="simple-box">
+      <p class="simple-label">Dumb version</p>
+      <p>MCP = plug Higgsfield into Claude / OpenCode / Cursor. Skills = reusable recipes (generate, soul character, product shoot). You talk. The agent submits jobs and waits.</p>
+    </div>
+
+    <div class="setup-grid">
+      <article class="setup-card">
+        <h3>A. MCP (hosted)</h3>
+        <p class="mono">https://mcp.higgsfield.ai/mcp</p>
+        <ul class="check">
+          <li>OAuth with your Higgsfield account</li>
+          <li>No API key copy-pasta</li>
+          <li>Common tools: generate image/video, create character, poll status</li>
+        </ul>
+        <pre class="code"><code># Claude Code example
+claude mcp add --transport http --scope user \
+  higgsfield https://mcp.higgsfield.ai/mcp</code></pre>
+      </article>
+      <article class="setup-card">
+        <h3>B. Skills (workflow packs)</h3>
+        <pre class="code"><code>npx skills add higgsfield-ai/skills
+higgsfield auth login</code></pre>
+        <ul class="check">
+          <li><strong>generate</strong> — general image/video</li>
+          <li><strong>soul</strong> — train / reuse a character</li>
+          <li><strong>product-photoshoot</strong> — product/marketing packs</li>
+        </ul>
+        <p class="small">Also useful: video → prompt reverse, product URL → launch clip, long video → vertical shorts.</p>
+      </article>
+    </div>
+
+    <details class="deep">
+      <summary>Deep dive: OpenCode config gotcha</summary>
+      <div class="deep-body">
+        <p>OpenCode uses <code>servers</code>, not <code>mcpServers</code>. Put this in <code>~/.config/opencode/opencode.json</code> or project MCP config:</p>
+        <pre class="code"><code>{
+  "mcp": {
+    "higgsfield": {
+      "type": "remote",
+      "url": "https://mcp.higgsfield.ai/mcp"
+    }
+  }
+}</code></pre>
+        <p class="small">Exact key names vary by client. After adding, fully restart the app and complete OAuth on first tool call.</p>
+        <h3>Prompt recipe that works in chat (MCSLA)</h3>
+        <ol class="steps compact">
+          <li><strong>Model</strong> — Kling / Seedance / Veo…</li>
+          <li><strong>Composition</strong> — frame, angle, subject placement</li>
+          <li><strong>Subject</strong> — concrete wardrobe, age vibe, props</li>
+          <li><strong>Lighting</strong> — golden hour, soft window, neon night</li>
+          <li><strong>Aesthetic</strong> — handheld vlog, 35mm, light grain</li>
+        </ol>
+        <pre class="code"><code>Model: Kling 3.0
+Composition: medium close-up, subject center-left, shallow DOF
+Subject: Taiwanese woman, mid-20s, white linen shirt, natural makeup
+Lighting: golden hour street light, soft rim
+Aesthetic: handheld iPhone vlog, photoreal, 9:16, 6 seconds
+Action: small smile, slight nod, hair moves in breeze</code></pre>
+      </div>
+    </details>
+  </section>
+
+  <!-- CH6 -->
+  <section class="chapter" id="ch6">
+    <header class="ch-head">
+      <span class="ch-num">06</span>
+      <div>
+        <h2>Recipe for good assets</h2>
+        <p class="ch-blurb">Still first. Character second. One action per clip. Cheap drafts, expensive finals.</p>
+      </div>
+    </header>
+
+    <div class="pipeline" aria-label="Production pipeline">
+      <div class="pipe-step"><span>1</span><strong>Lock character</strong><em>Soul ID / refs</em></div>
+      <div class="pipe-step"><span>2</span><strong>Make key stills</strong><em>hero / walk / talk</em></div>
+      <div class="pipe-step"><span>3</span><strong>Animate short</strong><em>5–8s I2V</em></div>
+      <div class="pipe-step"><span>4</span><strong>Pick winners</strong><em>kill AI-looking takes</em></div>
+      <div class="pipe-step"><span>5</span><strong>Stitch + caption</strong><em>editor + BGM</em></div>
+    </div>
+
+    <div class="two-col">
+      <div class="do">
+        <h3>Do</h3>
+        <ul>
+          <li>One action per clip</li>
+          <li>Reuse the same still family</li>
+          <li>Write captions before lip-sync</li>
+          <li>Keep wardrobe and hair fixed per episode</li>
+          <li>Iterate drafts on cheap models</li>
+        </ul>
+      </div>
+      <div class="dont">
+        <h3>Don’t</h3>
+        <ul>
+          <li>“Walk, talk, wave, turn, change outfit” in one prompt</li>
+          <li>Animate a bad still and hope video fixes it</li>
+          <li>Switch face style mid-series without Soul ID</li>
+          <li>Spend Seedance credits on throwaway tests</li>
+          <li>Skip post: raw AI clips look unfinished</li>
+        </ul>
+      </div>
+    </div>
+
+    <figure class="prompt-card">
+      <div class="prompt-head">Copy-paste vlog prompt skeleton</div>
+      <pre class="code big"><code>Handheld iPhone-style vlog, medium close-up,
+Taiwanese young woman in casual summer outfit,
+walking through a Taipei night market at golden hour,
+natural smile, slight camera shake, shallow depth of field,
+soft ambient city noise, 9:16 vertical, photorealistic,
+single simple action only: looks at camera and waves once</code></pre>
+    </figure>
+
+    <details class="deep">
+      <summary>Deep dive: agent chat script for batch assets</summary>
+      <div class="deep-body">
+        <ol class="steps">
+          <li>Train Soul character “Maya” from 12–20 clean reference photos.</li>
+          <li>Generate 6 key stills in Taipei street / café / night market.</li>
+          <li>Animate each still to 6s with Kling, handheld, one action.</li>
+          <li>Return only the top 4 clips + stills as a package.</li>
+          <li>Human picks, then editor stitches to 30s with captions.</li>
+        </ol>
+      </div>
+    </details>
+  </section>
+
+  <!-- CH7 -->
+  <section class="chapter" id="ch7">
+    <header class="ch-head">
+      <span class="ch-num">07</span>
+      <div>
+        <h2>Case study prep: Taiwan beauty intro vlog</h2>
+        <p class="ch-blurb">80% prep. 20% generate. This is the checklist that stops face drift and credit waste.</p>
+      </div>
+    </header>
+
+    <div class="warn">
+      <strong>Consent first.</strong> If the face is a real person, get written permission for commercial use. Fully fictional characters are simpler legally.
+    </div>
+
+    <div class="prep-steps">
+      <article class="prep">
+        <div class="prep-num">0</div>
+        <div>
+          <h3>Product definition</h3>
+          <p>Write these before any generate button:</p>
+          <ul class="mini-grid">
+            <li><strong>Length</strong> 15–30s intro</li>
+            <li><strong>Ratio</strong> 9:16</li>
+            <li><strong>Persona</strong> age vibe, energy, wardrobe</li>
+            <li><strong>Scenes</strong> 2–3 max (street / market / café)</li>
+            <li><strong>Language</strong> VO + captions vs lip-sync</li>
+            <li><strong>Job</strong> channel intro / brand host / travel series</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="prep">
+        <div class="prep-num">1</div>
+        <div>
+          <h3>Character assets (Soul ID)</h3>
+          <div class="ref-grid" aria-hidden="true">
+            <div class="ref ok"><span>Front</span></div>
+            <div class="ref ok"><span>3/4</span></div>
+            <div class="ref ok"><span>Side</span></div>
+            <div class="ref ok"><span>Smile</span></div>
+            <div class="ref bad"><span>Blur</span></div>
+            <div class="ref bad"><span>Mixed style</span></div>
+          </div>
+          <p>Use <strong>12–20 sharp photos</strong> of one person, same era, clear face, no heavy filters. Train Soul ID. Run 10 still tests across scenes before video.</p>
+        </div>
+      </article>
+
+      <article class="prep">
+        <div class="prep-num">2</div>
+        <div>
+          <h3>Shot list (more important than prompt poetry)</h3>
+          <div class="table-wrap">
+            <table class="model-table compact">
+              <thead>
+                <tr><th>Time</th><th>Shot</th><th>Action</th><th>Model</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>0–3s</td><td>Wide</td><td>Taipei establish</td><td>Veo / MiniMax</td></tr>
+                <tr><td>3–8s</td><td>MCU</td><td>Walk in + wave</td><td>Kling I2V</td></tr>
+                <tr><td>8–15s</td><td>CU</td><td>One intro line</td><td>Kling + LipSync</td></tr>
+                <tr><td>15–22s</td><td>MS</td><td>Market walk B-roll</td><td>Seedance / Kling</td></tr>
+                <tr><td>22–30s</td><td>CU / card</td><td>CTA + end card</td><td>Editor</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </article>
+
+      <article class="prep">
+        <div class="prep-num">3</div>
+        <div>
+          <h3>Still library before motion</h3>
+          <div class="still-lib" aria-hidden="true">
+            <div class="still-item"><div class="ph hero"></div><span>Hero half-body</span></div>
+            <div class="still-item"><div class="ph walk"></div><span>Walk full body</span></div>
+            <div class="still-item"><div class="ph talk"></div><span>Talk close-up</span></div>
+            <div class="still-item"><div class="ph broll"></div><span>Scene B-roll</span></div>
+          </div>
+          <p>If the still looks wrong, the video will look more wrong. Only animate approved frames.</p>
+        </div>
+      </article>
+
+      <article class="prep">
+        <div class="prep-num">4</div>
+        <div>
+          <h3>Audio plan</h3>
+          <ul class="check">
+            <li><strong>Safest:</strong> voice-over + captions (no lip-sync risk)</li>
+            <li><strong>Higher polish:</strong> one short on-camera line (8–12 words) + LipSync</li>
+            <li>Write Chinese captions first, then decide mouth performance</li>
+            <li>Keep BGM under the voice; add a 0.5s brand sting</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="prep">
+        <div class="prep-num">5</div>
+        <div>
+          <h3>Spend strategy</h3>
+          <div class="spend-bar">
+            <div class="sb a">Drafts · MiniMax / Kling</div>
+            <div class="sb b">People finals · Kling / Seedance</div>
+            <div class="sb c">Wide plates · Veo</div>
+          </div>
+          <p>Never put every shot on the most expensive model. People close-ups earn the premium credits.</p>
+        </div>
+      </article>
+    </div>
+
+    <details class="deep">
+      <summary>Deep dive: sample 30s script (EN + ZH captions idea)</summary>
+      <div class="deep-body">
+        <div class="script">
+          <p><strong>VO / line 1:</strong> “Hey, I’m Maya — Taipei food walks, every week.”</p>
+          <p><strong>Caption ZH idea:</strong>「嗨，我是 Maya，每週帶你走台北小吃。」</p>
+          <p><strong>VO / line 2:</strong> “Tonight: night market classics in under two minutes.”</p>
+          <p><strong>End CTA:</strong> “Follow for the next stop.”</p>
+        </div>
+        <p class="small">Keep spoken lines short. AI mouths fail on monologues.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- CH8 -->
+  <section class="chapter" id="ch8">
+    <header class="ch-head">
+      <span class="ch-num">08</span>
+      <div>
+        <h2>MVP: ship a 20–30s intro today</h2>
+        <p class="ch-blurb">Minimum path. No perfectionism. Re-render only the failed shot.</p>
+      </div>
+    </header>
+
+    <ol class="mvp">
+      <li>
+        <span class="mvp-n">1</span>
+        <div>
+          <h3>Write 3-line persona + 2 scenes</h3>
+          <p>Who she is, what she wears, where we are. Done in five minutes.</p>
+        </div>
+      </li>
+      <li>
+        <span class="mvp-n">2</span>
+        <div>
+          <h3>Generate 8–12 stills, pick 1 master face</h3>
+          <p>Optional: train Soul ID if this becomes a series.</p>
+        </div>
+      </li>
+      <li>
+        <span class="mvp-n">3</span>
+        <div>
+          <h3>Build a 5-row shot list</h3>
+          <p>One action each. Times add to ~30s.</p>
+        </div>
+      </li>
+      <li>
+        <span class="mvp-n">4</span>
+        <div>
+          <h3>I2V every row at ~6 seconds</h3>
+          <p>Kling for people. Cheap model for empty plates.</p>
+        </div>
+      </li>
+      <li>
+        <span class="mvp-n">5</span>
+        <div>
+          <h3>Stitch in CapCut</h3>
+          <p>Captions, light grade, BGM, end card. Publish.</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="final-grid">
+      <div class="final-card">
+        <h3>Remember</h3>
+        <ul class="check">
+          <li>Higgsfield = multi-model studio, not one model</li>
+          <li>Image → video is the people path</li>
+          <li>Soul ID saves series consistency</li>
+          <li>MCP/Skills multiply output once setup is done</li>
+        </ul>
+      </div>
+      <div class="final-card accent-card">
+        <h3>Next actions</h3>
+        <ol>
+          <li>Create / log into Higgsfield</li>
+          <li>Connect MCP or install Skills</li>
+          <li>Lock one character still today</li>
+          <li>Ship one 20s cut, not a perfect film</li>
+        </ol>
+        <a class="btn-primary" href="https://higgsfield.ai/" target="_blank" rel="noopener">Open Higgsfield</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK REF -->
+  <section class="chapter ref-chapter" id="ref">
+    <header class="ch-head">
+      <span class="ch-num">QR</span>
+      <div>
+        <h2>Quick reference</h2>
+        <p class="ch-blurb">Print this in your brain.</p>
+      </div>
+    </header>
+    <div class="qr-grid">
+      <div>
+        <h3>Default stack</h3>
+        <p>Still (Nano Banana Pro / GPT Image-class) → Kling I2V → CapCut</p>
+      </div>
+      <div>
+        <h3>Series stack</h3>
+        <p>Soul ID → still family → Kling/Seedance → fixed LUT + captions</p>
+      </div>
+      <div>
+        <h3>Agent stack</h3>
+        <p>MCP auth → MCSLA prompts → poll → package URLs</p>
+      </div>
+      <div>
+        <h3>Budget stack</h3>
+        <p>MiniMax draft → Kling people → Veo only for hero wide</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div>
+      <strong>Higgsfield 101</strong>
+      <p>A Ron practical guide. Models and pricing change; verify inside the product before you spend credits.</p>
+    </div>
+    <div class="foot-links">
+      <a href="https://ron.best/" target="_blank" rel="noopener">ron.best</a>
+      <a href="https://higgsfield.ai/" target="_blank" rel="noopener">higgsfield.ai</a>
+      <a href="https://higgsfield.ai/skills" target="_blank" rel="noopener">Skills docs</a>
+      <a href="https://higgsfield.ai/mcp" target="_blank" rel="noopener">MCP</a>
+    </div>
+  </div>
+  <p class="foot-note">Built as an expandable 101 tutorial · Not affiliated with Higgsfield · Educational summary from public product docs and reviews (2026)</p>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="Back to top">↑</button>
+<script src="assets/app.js"></script>
+</body>
+</html>
